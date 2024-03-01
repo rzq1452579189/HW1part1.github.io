@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Falling Land</title>
+    <style>
+        /* Setting up the page with responsive design and vivid colors */
+        body {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0; /* Light grey background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1, h2 {
+            width: 100%;
+            margin: 0;
+            padding: 20px 0;
+            background-color: #FFC0CB; /* Pink background */
+            color: #333; /* Dark grey for text */
+        }
+        h2 {
+            background-color: #ADD8E6; /* Light blue background */
+        }
+        .video-title {
+            margin: 20px 0;
+            color: #007bff; /* Bootstrap-like blue */
+            transition: transform 0.3s ease;
+        }
+        .video-title:hover {
+            transform: scale(1.05); /* Slightly increase size on hover */
+            cursor: pointer;
+        }
+        video {
+            width: 90%; /* Responsive width */
+            max-width: 640px; /* Max width to ensure videos are not too large */
+            height: auto; /* Maintain aspect ratio */
+            border: 3px solid #ddd; /* Light grey border */
+            transition: border-color 0.3s ease;
+            margin-bottom: 30px; /* Space between videos */
+        }
+        video:hover {
+            border-color: #007bff; /* Change border color on hover */
+            cursor: pointer;
+        }
+        @media (max-width: 700px) {
+            h1, h2 {
+                padding: 15px 0;
+            }
+            .video-title {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Falling Land!!</h1>
+    <h2>Select an animal to fall them down!</h2>
+
+    <div class="video-title"><strong>Sheep!!</strong></div>
+    <video src="sheep run.mp4" autoplay loop muted onclick="window.location='content.html';"></video>
+
+    <br><br><br>
+
+    <div class="video-title"><strong>Wolf!!</strong></div>
+    <video src="wolf run.mp4" autoplay loop muted onclick="window.location='content2.html';"></video>
+
+    <script>
+        // Ensure videos play on load
+        document.addEventListener('DOMContentLoaded', function() {
+            var videos = document.querySelectorAll('video');
+            videos.forEach(function(video) {
+                video.play();
+            });
+        });
+    </script>
+</body>
+</html>
